@@ -1,0 +1,2199 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 0rem; /*56px*/
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --hue: 152;
+  --sat: 63%;
+  --first-color: hsl(var(--hue), 24%, 32%);
+  --first-color-alt: hsl(var(--hue), 24%, 28%);
+  --first-color-light: hsl(var(--hue), 24%, 66%);
+  --first-color-lighten: hsl(var(--hue), 24%, 92%);
+  --title-color: hsl(var(--hue), 4%, 15%);
+  --text-color: hsl(var(--hue), 4%, 35%);
+  --text-color-light: hsl(var(--hue), 4%, 55%);
+  --body-color: hsl(var(--hue), 0%, 100%);
+  --putih: #FAF9F5;
+  --putih-alt : #fff;
+  --hijau: #5B6A50;
+  --abu: #575757;
+  --hijau-muda: #99AE87;
+  --main-color: #5B6A50;
+  --main-color-alt: #4b5a41;
+  --container-color: #FFF;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Poppins', sans-serif;
+  --confortaa: 'Comfortaa', cursive;
+  --dancing: 'Dancing Script', cursive;
+  --pacifico: 'Pacifico', cursive;
+  --greate : 'Great Vibes', cursive;
+  --inspiration : 'Inspiration', cursive;
+  --sacramento : 'Sacramento', cursive;
+  --parisiene :'Parisienne', cursive;
+  --extra-font-size: 5rem;
+  --medium-font-size: 1.75rem;
+  --semimedium-font-size: 1.72rem;
+  --big-font-size: 2rem;
+  --extra-big-font-size: 3rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+  --tiny-font-size: .55rem;
+  --tujuh : 7rem;
+  --enam : 6rem;
+  --tiga : 3rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --fon-bold: 800;
+
+  /*========== Margenes Bottom ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --mb-0-5: .5rem;
+  --mb-0-75: .75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 3.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+textarea{
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body{
+  margin: var(--header-height) 0 0 0;
+  background-color: var(--putih);
+  color: var(--text-color);
+  transition: .4s; /*For animation dark mode*/
+}
+a {
+  cursor: pointer;
+}
+
+button{
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+h1,h2,h3{
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== THEME ===============*/
+/*========== Variables Dark theme ==========*/
+body.dark-theme{
+  --first-color-dark: hsl(var(--hue), 8%, 20%);
+  --title-color: hsl(var(--hue), 4%, 95%);
+  --text-color: hsl(var(--hue), 4%, 75%);
+  --body-color: hsl(var(--hue), 8%, 12%);
+  --container-color: hsl(var(--hue), 8%, 16%);
+}
+
+/*========== Button Dark/Light ==========*/
+.change-theme{
+  color: var(--title-color);
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+
+.nav__btns{
+  display: inline-flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+hr{
+  /* margin-top: 1.5rem; */
+  /* margin-bottom: .5rem; */
+  border-width: thin;
+  border-style: solid;
+  border-radius: 2px;
+  border-color: var(--main-color);
+}
+
+/*========== 
+Color changes in some parts of 
+the website, in dark theme 
+==========*/
+
+.dark-theme .steps__bg,
+.dark-theme .questions{
+  background-color: var(--first-color-dark);
+}
+
+.dark-theme .product__circle,
+.dark-theme .footer__subscribe{
+  background-color: var(--container-color);
+}
+
+.dark-theme .scroll-header{
+  box-shadow: 0 1px 4px hsla(var(--hue), 4%, 4%, .3);
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.section{
+  padding: 1rem 0 1rem;
+}
+
+.section__title{
+  margin-bottom: .5rem;
+  /* line-height: 140%; */
+  font-family: var(--dancing);
+  color: var(--main-color);
+}
+
+.section__title-center{
+  margin-bottom: .5rem;
+  padding: 1rem;
+  /* line-height: 140%; */
+  font-family: var(--dancing);
+  color: var(--main-color);
+  text-align: center;
+}
+
+.container{
+  max-width: 968px;
+  margin-left: var(--mb-1-5);
+  margin-right: var(--mb-1-5);
+}
+
+.grid{
+  display: grid;
+}
+
+.main{
+  overflow: hidden; /*For animation*/
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+/*=============== NAV ===============*/
+#nav{
+  transition: .5s;
+  display:none ;
+}
+.nav{
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__menu {
+  position: fixed;
+  bottom: 1rem;
+  background-color: var(--container-color);
+  box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
+  height: 4rem;
+  padding: 0 1rem;
+  display: grid;
+  align-content: center;
+  border-radius: 1.25rem 1.25rem 1.25rem 1.25rem;
+  transition: .4s;
+  z-index: var(--z-fixed);
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media screen and (max-width: 767px){ 
+  .nav__name {
+    font-family: var(--confortaa);
+    font-size: .55rem;
+  }
+  .nav__icon {
+    font-size: 1.5rem;
+    padding: 0 .6rem;
+  }
+  .nav__img {
+    display: none;
+  }
+  .header{
+    height: 0;
+    bottom: .5rem;
+  }
+  /* .nav_item_maps{
+    display: none;
+  } */
+  .home__container{
+    margin-top: 50%;
+  }
+}
+/*=============== Important CSS ===============*/
+
+.bunga_1_kiri {
+  z-index: -1;
+  position: absolute;
+  top: -55px;
+  left: -78px;
+  width: 70%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+.bunga_2_kiri {
+  position: absolute;
+  z-index: -1;
+  bottom: 150px;
+  left: -156px;
+  width: 77%;
+  opacity: .04;
+  transform: rotate(50deg);
+}
+
+.background_kiri_atas,.background_kanan_atas,.background_kanan_bawah,.background_kiri_bawah{
+  width: 85%;
+}
+  /*=============== Customize CSS ===============*/
+
+.foto_mempelai{
+  grid-template-columns: auto;
+}
+.basmalah{
+  width: 70%;
+  margin-bottom: var(--mb-1);
+}
+.foto_cwe, .foto_cwo{
+  width: 40%;
+}
+.about__container, .acara__container{
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.about__nama, .foto_pasangan{
+  margin-top: 1rem;
+}
+.grid_vertical{
+  z-index: 1;
+}
+.section__title, .section__title-center{
+  font-size: var(--big-font-size);
+}
+.card__title{
+  font-size: 1.2rem;
+  /* margin: 1.5rem; */
+}
+.card__subtitle{
+  top: 58%;
+  font-size: .6rem;
+}
+
+.gallery__item{
+  margin: 0.5rem;
+}
+.gallery {
+  grid-template-columns: repeat(2, 1fr);
+}
+/* Gallery Layout */
+.gallery__item--1 {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+}
+.gallery__item--2 {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+}
+.gallery__item--3 {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 2;
+}
+.gallery__item--4 {
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 2;
+}
+.gallery__item--5 {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+}
+.gallery__item--6 {
+    grid-column: 2 / span 1;
+    grid-row: 4 / span 1;
+}
+
+.footer__copy{
+  bottom: 5.15rem;
+  margin-block-start: 0em;
+}
+.card iframe{
+  width: 350px;
+  height: 550px;
+}
+/*=============== End ===============*/
+
+.nav__list, 
+.nav__link {
+  display: flex;
+}
+
+.nav__list{
+  justify-content: space-evenly;
+}
+
+.nav__link{
+  flex-direction: column;
+  align-items: center;
+  row-gap: 4px;
+  color: var(--abu);
+}
+
+.nav__link:hover .nav__name{
+  color: var(--first-color);
+}
+
+/* Change background header */
+/* .scroll-header{
+  box-shadow: 0 1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
+} */
+
+/* Active link */
+.active-link{
+  position: relative;
+  color: var(--main-color);
+  transition: .4s;
+  transform: translateY(-.2rem);
+}
+
+.active-link::after{
+  content: '';
+  position: absolute;
+  bottom: -.5rem;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background-color: var(--main-color);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/*=============== HOME ===============*/
+/* .home{
+  padding: 3.5rem 0 2rem;
+} */
+.home_section{
+  padding: 1rem 0 1rem;
+}
+.home_size{
+  height: 100vh;
+  position: relative;
+}
+.home__title{
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.nama-pengantin {
+  text-align: center;
+  /* padding: 1px; */
+  font-family: var(--parisiene);
+  font-size: var(--tujuh);
+  color: var(--main-color);
+}
+.nama-pengantin-pria {
+  text-align: center;
+  /* padding: .5rem; */
+  margin-bottom: 5rem;
+  font-family: var(--parisiene);
+  font-size: var(--tujuh);
+  color: var(--main-color);
+}
+.nama-pengantin-wanita {
+  text-align: center;
+  /* padding: .5rem; */
+  margin-top: 5rem;
+  font-family: var(--parisiene);
+  font-size: var(--tujuh);
+  color: var(--main-color);
+}
+
+
+.dan-nama-pengantin{
+  text-align: center;
+  font-family: var(--parisiene);
+  font-size: var(--h1-font-size);
+}
+.subtitle{
+  text-align: center;
+  padding: 5px;
+  font-size: var(--h3-font-size);
+  font-family: var(--pacifico);
+  color: var(--main-color);
+}
+
+.home__container{
+  position:absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-tooltip);
+}
+.buka_undangan{
+  width: fit-content;
+  text-align: center;
+  justify-self: center;
+  margin-top: 1.5rem;
+  display: inline-block;
+  background-color: var(--main-color);
+  color: var(--putih);
+  padding: .75rem;
+  border-radius: .4rem;
+  font-weight: var(--font-medium);
+  font-family: var(--confortaa);
+  box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
+
+}
+.box-nama{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*=============== BUTTONS ===============*/
+.button{
+  display: inline-block;
+  background-color: var(--main-color);
+  color: var(--putih);
+  padding: .75rem;
+  border-radius: .4rem;
+  font-weight: var(--font-medium);
+  transition: .3s;
+  font-family: var(--confortaa);
+  margin-top: 1rem;
+  box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
+}
+
+.button:hover{
+  background-color: var(--main-color-alt);
+}
+
+.button__icon{
+  transition: .3s;
+  margin-right: .25rem;
+}
+
+.button:hover .button__icon{
+  /* transform: translateY(-.25rem); */
+  animation: naik_turun .4s forwards;
+}
+
+@keyframes naik_turun {
+  10%{
+    transform: translateY(0rem);
+  }
+  30%{
+    transform: translateY(-.15rem);
+  }
+  50%{
+    transform: translateY(-.3rem);
+  }
+}
+
+.button--flex{
+  display: inline-flex;
+  align-items: center;
+  column-gap: .5rem;
+}
+
+.button--link{
+  color: var(--first-color);
+  font-weight: var(--font-medium);
+}
+
+.button--link:hover .button__icon{
+  transform: translateY(-.25rem);
+}
+
+/*=============== ABOUT ===============*/
+.about_container {
+  height: 100vh;
+  position: relative;
+}
+
+.about__container{
+  row-gap: 2rem;
+  text-align: center;
+}
+
+.about__title{
+  text-align: center;
+  margin-bottom: var(--mb-0-5);
+  font-family: var(--confortaa);
+  color: var(--abu);
+}
+.keluarga{
+  text-align: center;
+  margin-bottom: var(--mb-0-5);
+  font-family: var(--dancing);
+  color: var(--abu);
+}
+
+.about__description{
+  margin-bottom: var(--mb-2);
+}
+
+.about__details{
+  display: grid;
+  row-gap: 1rem;
+  margin-bottom: var(--mb-2-5);
+}
+
+.about__details-description{
+  display: inline-flex;
+  column-gap: .5rem;
+  font-size: var(--small-font-size);
+}
+
+.about__details-icon{
+  font-size: 1rem;
+  color: var(--first-color);
+  margin-top: .15rem;
+}
+
+.foto_pasangan {
+  text-align: center;
+  padding: 1px;
+}
+.about__tanggal {
+  font-family: var(--pacifico);
+  font-size: var(--h2-font-size);
+  color: var(--main-color);
+}
+.about__nama {
+  text-align: center;
+  padding: 1px;
+  font-family: var(--dancing);
+  color: var(--abu);
+}
+.nama__pasangan {
+  text-align: center;
+  padding: 1px;
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+  font-family: var(--pacifico);
+  color: var(--main-color);
+}
+
+.foto_cwe {
+  z-index: 1;
+  filter: drop-shadow(0 0 10px hsla(var(--hue), var(--sat), 15%, 0.10));
+}
+.foto_cwo {
+  z-index: 1;
+  filter: drop-shadow(0 0 10px hsla(var(--hue), var(--sat), 15%, 0.10));
+}
+
+.background1_kiri_atas {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  transform: rotate(180deg);
+}
+ 
+.background1_kanan_bawah {
+  position: absolute;
+  right: -.85px;
+  bottom: 0;
+  transform: rotate(180deg);
+}
+
+.background1_kanan_atas {
+  position: absolute;
+  right: -.85px;
+  top: 0;
+  transform: rotate(180deg) scaleX(-1);
+}
+
+.background1_kiri_bawah {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  transform: rotate(180deg) scaleX(-1);
+}
+
+.background2_kiri_atas {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  transform: rotate(180deg);
+}
+ 
+.background2_kanan_bawah {
+  position: absolute;
+  right: -.85px;
+  z-index: -1;
+  bottom: 0;
+}
+
+.background2_kanan_atas {
+  position: absolute;
+  right: -.85px;
+  top: 0;
+  transform: scaleX(-1);
+}
+
+.background2_kiri_bawah {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  transform: scaleX(-1);
+}
+
+.bunga_3_kiri{
+  left: 0;
+  bottom: -1rem;
+  position: absolute;
+  transform: rotate(335deg);
+  opacity: .7;
+}
+.bunga_3_kiri_2{
+  left: 0;
+  bottom: -1rem;
+  position: absolute;
+  transform: rotate(329deg);
+  opacity: 0.15;
+}
+
+.bunga_4_kanan{
+  width: 20%;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  transform: rotate(40deg);
+  opacity: .7;
+}
+
+.bunga_4_kanan_2{
+  width: 20%;
+  right: 2px;
+  bottom: 0;
+  position: absolute;
+  transform: rotate(48deg);
+  opacity: 0.15;
+}
+/*=============== Acara_card ===============*/
+.card_countdown {
+  box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
+  background-color:var(--container-color);
+  margin-top: 1rem;
+}
+.col_countdown {
+  display: flex;
+  justify-content: center;
+  /* column-gap: 4rem; */
+}
+.cd_title{
+  font-family: var(--dancing);
+  color: var(--main-color);
+}
+.hari,.jam,.menit,.detik{
+  font-size: 4rem;
+}
+.cd_subtitle{
+  margin-top: 1rem;
+  font-family: var(--dancing);
+  font-size: 1.5rem;
+  color: var(--main-color);
+}
+.card{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin-top: 1rem;
+}
+.card__title{ 
+  align-self: center; 
+  color: var(--main-color);
+  font-family: var(--pacifico); 
+}
+.card__subtitle{ 
+  align-self: center;
+  color: var(--abu);
+  font-family: var(--confortaa);
+}
+
+.card__thumbnail{
+  position: relative;
+  overflow: hidden;  
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center; /* vertical center */
+  width: fit-content; /* Thumbnail dimensions. */  
+  margin-top: 1rem;
+}
+
+.card__thumbnail > img{ 
+  position: relative;
+  width: auto;
+}  
+
+.card__thumbnail > .card__title{
+  position: absolute; 
+  top : 32%;
+}
+.card__thumbnail > .card__subtitle{
+  position: absolute; 
+}
+
+.grid_vertical{
+  display: grid;
+  grid-template-rows: auto;
+}
+.acara__detail {
+  text-align: center;
+  padding: 1px;
+  /* margin-top: 1rem; */
+}
+.nama__acara {
+  text-align: center;
+  padding: 1px;
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+  font-family: var(--dancing);
+  font-size: var(--h1-font-size);
+  color: var(--main-color);
+  font-weight: var(--font-bold);
+}
+.tempat__acara{
+  text-align: center;
+  padding: 1px;
+  margin-top: .5rem;
+  font-family: var(--dancing);
+  font-size: var(--h3-font-size);
+  color: var(--abu);
+}
+
+.acara_container {
+  height: 100vh;
+  position: relative;
+}
+
+.acara__container{
+  row-gap: 2rem;
+  text-align: center;
+}
+
+.acara__title{
+  text-align: center;
+  margin-bottom: var(--mb-0-5);
+  font-family: var(--dancing);
+  font-size: var(--h3-font-size);
+  color: var(--abu);
+}
+/*=============== lokasi ===============*/
+
+.card iframe{
+  border: 0;
+  filter: drop-shadow(0 0 10px hsla(var(--hue), var(--sat), 15%, 0.10));
+  border-radius: .5rem;
+}
+.lokasi_container {
+  height: auto;
+  position: relative;
+}
+/*=============== Galeri ===============*/
+
+.galeri_container{
+  position: relative;
+}
+
+.wrapper {
+  max-width: 60rem;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+/* Gallery Link */
+.gallery__link {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: .5rem;
+  filter: drop-shadow(0 0 10px hsla(var(--hue), var(--sat), 15%, 0.10));
+
+}
+
+/* Gallery Image */
+.gallery__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  transition: transform .5s;
+}
+
+.gallery__link:hover .gallery__image {
+  transform: scale(1.2);
+}
+
+.galeri__container{
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem 3rem;
+}
+/*=============== Amplop ===============*/
+.amplop_container{
+  height: 100vh;
+  position: relative;
+}
+.amplop__container{
+  row-gap: 2rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.amplop__detail {
+  text-align: center;
+  padding: .5rem;
+  /* margin-top: 1rem; */
+}
+.grid-horizontal{
+  column-gap: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jenis_kirim {
+  text-align: center;
+  padding: 1px;
+  margin-top: .5rem;
+  margin-bottom: 1rem;
+  font-family: var(--confortaa);
+  font-size: var(--h2-font-size);
+  color: var(--main-color);
+  font-weight: var(--font-bold);
+}
+.nama__bank{
+  text-align: center;
+  padding: 1px;
+  margin-top: .5rem;
+  font-family: var(--confortaa);
+  font-size: var(--normal-font-size);
+  color: var(--abu);
+  font-weight: var(--font-bold);
+}
+
+.button_rek{
+  display: inline-block;
+  background-color: var(--main-color);
+  color: var(--putih);
+  padding: 1rem;
+  border-radius: .4rem;
+  font-weight: var(--font-medium);
+  transition: .3s;
+  font-family: var(--confortaa);
+  margin-top: 1rem;
+  box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
+}
+
+.button_rek:hover{
+  background-color: var(--main-color-alt);
+}
+
+.button_rek:hover .button__icon{
+  animation: naik_turun .4s forwards;
+}
+
+/*=============== CONTACT ===============*/
+.ucapan_container{
+  height: 100vh;
+  position: relative;
+}
+
+.quotes{
+  text-align: center;
+  padding: 1px;
+  margin-top: .5rem;
+  font-family: var(--confortaa);
+  font-size: var(--normal-font-size);
+  color: var(--abu);
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.container_surah{
+  display: grid;
+  grid-template-columns: auto auto auto; 
+  align-items: center;
+}
+.bunga_quotes{
+  /* width: 70%; */
+  z-index: 1;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.nama_berbahagia {
+  text-align: center;
+  padding: 1px;
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+  font-family: var(--dancing);
+  font-size: var(--h2-font-size);
+  color: var(--main-color);
+  font-weight: var(--font-bold);
+}
+
+.ucapan_1{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.bd-grid{
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 1rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.pesan__container{
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.pesan__content{
+  display: flex;
+  flex-wrap: nowrap;
+  margin-right: 17%;
+  margin-left: 17%;
+  background-color: var(--container-color);
+  border-radius: .5rem;
+  box-shadow: 0 2px 4px rgba(3,74,40,.15);
+  margin-bottom: .5rem;
+  justify-content: flex-start;
+}
+
+.pesan__name{
+  color: var(--main-color);
+  font-size: var(--h2-font-size);
+}
+
+.pesan__detail{
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-1);
+}
+
+.input-group {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.input {
+  width: 30rem;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font: inherit;
+  color: var(--abu);
+  background-color: transparent;
+  outline: 2px solid var(--main-color);
+}
+
+.input-label {
+  position: absolute;
+  transform: translate(-470px, 10px);
+  transform-origin: left;
+  transition: transform .25s;
+}
+
+.input:focus~.input-label,
+.input:valid~.input-label {
+  transform: translate(-480px, -30px) scale(.8);
+  color: var(--main-color);
+}
+
+.input:is(:focus, :valid) {
+  outline-color:var(--main-color);
+}
+
+.kirim_button{
+  width: fit-content;
+  text-align: center;
+  border-color: transparent;
+  background-color: var(--main-color);
+  color: var(--putih);
+  padding: .75rem;
+  border-radius: .4rem;
+  font-weight: var(--font-medium);
+  font-family: var(--confortaa);
+  box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
+  cursor: pointer;
+}
+.kirim_button:hover{
+  background-color: var(--main-color-alt);
+}
+
+.kirim_button:hover .button__icon{
+  animation: naik_turun .4s forwards;
+}
+.kolom_ucapan{
+  padding: .5rem;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.img_ucapan{
+  color: var(--main-color);
+  font-size: 70px;
+  width: 70px;
+  align-self: center;
+  margin: 1rem;
+}
+.isi_pesan{
+  text-align: left;
+}
+/*=============== FOOTER ===============*/
+.footer__copy{
+  position: relative;
+  text-align: center;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
+
+.link_hamma{
+  color: var(--main-color);
+}
+
+/*=============== SCROLL UP ===============*/
+.scrollup{
+  position: fixed;
+  background-color: var(--main-color);
+  right: 1rem;
+  bottom: -30%;
+  display: inline-flex;
+  padding: .5rem;
+  border-radius: .25rem;
+  z-index: var(--z-tooltip);
+  opacity: .8;
+  transition: .4s;
+}
+
+.scrollup__icon{
+  font-size: 1rem;
+  color: #FFF;
+  transition: .4s;
+}
+
+.scrollup:hover{
+  background-color: var(--main-color-alt);
+  opacity: 1;
+}
+
+/* Show Scroll Up*/
+.show-scroll{
+  bottom: 5.5rem;
+}
+
+.scrollup:hover .scrollup__icon {
+  /* transform: translateY(-.2rem); */
+  animation: naik_turun .7s forwards;
+
+}
+
+/*=============== audio ===============*/
+.button_audio{
+  z-index: 1;
+  border-radius: 50%;
+  position: fixed;
+  box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
+  background-color: var(--putih);
+  -webkit-tap-highlight-color: transparent;
+}
+#player-container #play-pause {
+  padding: 10px;
+  cursor: pointer;
+  text-indent: -999999px;
+  background-image: url(../img/audio_icon/music.svg);
+  background-repeat: no-repeat!important;
+  background-position: center;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+.play {
+  z-index: 1;
+  background-image: url(../img/audio_icon/music.svg);
+  color: red;
+}
+.playing {
+  z-index: 1;
+  background-image: url(../img/audio_icon/music.svg);
+  animation: rotation 6s infinite linear;
+  color: red;
+
+}
+.pause {
+  z-index: 1;
+   background-image: url(../img/audio_icon/mute.svg)!important;
+   color: var(--main-color);
+
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar{
+  width: .6rem;
+  background: hsl(var(--hue), 4%, 53%);
+}
+
+::-webkit-scrollbar-thumb{
+  background: hsl(var(--hue), 4%, 29%);
+  border-radius: .5rem;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 375px){
+  .bunga_1_kiri {
+    top: -30px;
+    left: 0px;
+    width: 100%;
+    height: 117vh;
+  }
+  .bunga_1_kanan {
+    width: 70%;
+    position: absolute;
+    z-index: 1;
+    right: -40px;
+    top: -48px;
+  }
+  .nama-pengantin-pria{
+    margin-bottom: 3rem;
+    font-size: var(--extra-font-size);
+  }
+  .nama-pengantin-wanita{
+    margin-top: 3rem;
+    font-size: var(--extra-font-size);
+  }
+  .nav__name {
+    display: none;
+  }
+  .nav__icon {
+    padding: .3rem;
+  }
+  .container{
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+  .nav__menu{
+    height: 3.5rem;
+    border-radius: 1rem;
+  }
+  .subtitle{
+    font-size: var(--h3-font-size);
+  }
+  .nama-pengantin{
+    font-size: var(--extra-big-font-size);
+  }
+  .nama__pasangan{
+    font-size: var(--h3-font-size);
+    margin-top: 0;
+    margin-bottom: 0;    
+  }
+  .about__nama{
+    font-size: var(--small-font-size);
+  }
+  .about__nama, .foto_pasangan{
+    margin-top: 0;
+  }
+  .keluarga{
+    margin-bottom: .2rem;
+  }
+  .about__title{
+    font-size: var(--tiny-font-size);
+  }
+  .card__title{
+    font-size: 0.9rem;
+    /* margin: 1.2rem; */
+    top: 30%;
+  }
+  .card__subtitle{
+    font-size: .5rem;
+  }
+  .button{
+    margin-top: .5rem;
+    padding: .6rem;
+    font-size: var(--small-font-size);
+  }
+  .wrapper{
+    padding: 1rem;
+  }
+  .footer__copy{
+    display: none;
+  }
+  .ucapan{
+    height: 100vh;
+  }
+  .acara__title{
+    font-size: var(--normal-font-size);
+  }
+  .about__tanggal{
+    font-size: var(--normal-font-size);
+  }
+  .card iframe{
+    width: 260px;
+    height: 300px;
+  }
+  .show-scroll{
+    bottom: 4.8rem;
+  }
+  .button_audio{
+    left: .5rem;
+    top: .5rem;
+    bottom: auto;
+  }
+  #player-container #play-pause {
+    width: 40px;
+    height: 40px;
+    background-size: 20px;
+    background-size:15px;
+  }
+  .background1_kanan_atas, .background1_kanan_bawah, .background1_kiri_atas, .background1_kiri_bawah,
+  .background2_kanan_atas, .background2_kanan_bawah, .background2_kiri_atas, .background2_kiri_bawah{
+    width: 70%;
+  }
+  .card_countdown{
+    margin: auto;
+    width: 58px;
+    padding: .8rem;
+    border-radius: .5rem;
+  }
+  .hari,.jam,.menit,.detik{
+    font-size: 1.7rem;
+  }
+  .cd_subtitle{
+    font-size: 1rem;
+  }
+
+  .card__thumbnail > img{
+    width: auto;
+    transform: scale(1.1);
+  }
+  .grid_vertical > .acara__resepsi, .grid_vertical > .col_countdown{
+    margin-top: 10%;
+  }
+  .amplop__container{
+    margin-top: 1rem;
+  }
+  .button_rek{
+    padding: .6rem;
+    border-radius: .3rem;
+  }
+  .nama__bank{
+    font-size: var(--small-font-size);
+  }
+
+  .input{
+    width: 15rem;
+  }
+  .input-label{
+    transform: translate(-230px, 10px);;
+  }
+  .input:focus~.input-label,
+  .input:valid~.input-label {
+    transform: translate(-240px, -30px) scale(.8);
+  }
+  .pesan__content{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .img_ucapan{
+    font-size: 50px;
+    width: 50px;
+    margin: .25rem;
+  }
+  .pesan__name{
+    font-size: var(--normal-font-size);
+  }
+  .pesan__detail{
+    font-size: var(--smaller-font-size);
+  }
+}
+
+@media screen and (min-width: 375px){
+  .bunga_1_kiri {
+    top: -30px;
+    left: 0px;
+    width: 100%;
+    height: 117vh;
+  }
+  .bunga_1_kanan {
+    width: 70%;
+    position: absolute;
+    z-index: 1;
+    right: -40px;
+    top: -48px;
+  }
+
+  .footer__copy{
+    display: none;
+  }
+  .container{
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+  .subtitle{
+    font-size: var(--h3-font-size);
+  }
+  .nama-pengantin{
+    font-size: var(--extra-big-font-size);
+  }
+  .nama__pasangan{
+    font-size: var(--h3-font-size);
+  }
+  .about_container{
+    height: auto;
+  }
+  .about__nama{
+    font-size: var(--small-font-size);
+  }
+  .about__nama, .foto_pasangan{
+    margin-top: .25rem;
+  }
+  .about__title{
+    font-size: var(--smaller-font-size);
+  }
+  .card__title{
+    font-size: 1.1rem;
+    /* margin: 1.5rem; */
+  }
+  .card__subtitle{
+    font-size: .65rem;
+  }
+  .button{
+    margin-top: .5rem;
+    padding: .6rem;
+    font-size: var(--small-font-size);
+  }
+  .wrapper{
+    padding: 1rem;
+  }
+  .footer__copy{
+    display: none;
+  }
+  .ucapan{
+    height: 100vh;
+  }
+  .acara__title{
+    font-size: var(--normal-font-size);
+  }
+  .about__tanggal{
+    font-size: var(--normal-font-size);
+  }
+  .card iframe{
+    width: 300px;
+    height: 400px;
+  }
+  .button_audio{
+    left: .5rem;
+    top: .5rem;
+    bottom: auto;
+  }
+  #player-container #play-pause {
+    width: 40px;
+    height: 40px;
+    background-size: 20px;
+    background-size:15px;
+  }
+  .grid_vertical > .acara__resepsi, .grid_vertical  > .col_countdown{
+    margin-top: 10%;
+  }
+
+  .background1_kanan_atas, .background1_kanan_bawah, .background1_kiri_atas, .background1_kiri_bawah,
+  .background2_kanan_atas, .background2_kanan_bawah, .background2_kiri_atas, .background2_kiri_bawah{
+    width: 60%;
+  }
+  .card_countdown{
+    margin: auto;
+    width: 65px;
+    padding: .9rem;
+    border-radius: .5rem;
+  }
+  .hari,.jam,.menit,.detik{
+    font-size: 2.1rem;
+  }
+  .cd_subtitle{
+    font-size: 1rem;
+  }
+
+  .input{
+    width: 19rem;
+  }
+  .input-label{
+    transform: translate(-290px, 10px);;
+  }
+  .input:focus~.input-label,
+  .input:valid~.input-label {
+    transform: translate(-300px, -30px) scale(.8);
+  }
+  .pesan__content{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .img_ucapan{
+    font-size: 50px;
+    width: 50px;
+    margin: .25rem;
+  }
+  .pesan__name{
+    font-size: var(--normal-font-size);
+  }
+  .pesan__detail{
+    font-size: var(--smaller-font-size);
+  }
+}
+
+@media screen and (min-width: 375px) and (min-height: 768px){
+  .bunga_1_kiri {
+    top: -30px;
+    left: 0px;
+    width: 100%;
+    height: 117vh;
+  }
+  .bunga_1_kanan {
+    width: 75%;
+    position: absolute;
+    z-index: 1;
+    right: -45px;
+    top: -52px;
+  }
+  .nama-pengantin-pria{
+    margin-bottom: 7rem;
+    font-size: var(--enam);
+  }
+  .nama-pengantin-wanita{
+    margin-top: 7rem;
+    font-size: var(--enam);
+  }
+  .dan-nama-pengantin{
+    font-size: var(--tiga);
+  }
+  .nama-pengantin{
+    font-size: var(--tujuh);
+  }
+  .subtitle{
+    font-size: var(--h2-font-size);
+  }
+  .about__nama, .foto_pasangan{
+    margin-top: .7rem;
+  }
+ .about__nama,.about__tanggal{
+    font-size: var(--h3-font-size);
+  }
+  .card__subtitle{
+    font-size: .55rem;
+  }
+  .card iframe{
+    width: 320px;
+    height: 400px;
+  }
+  .ucapan{
+    height: 100vh;
+  }
+  .nama__pasangan{
+    font-size: var(--h2-font-size);
+  }
+  .card__title{
+    font-size: 1.1rem;
+    /* margin: 1.5rem; */
+  }
+  .about__title, .acara__title{
+    font-size: var(--h3-font-size);
+  }
+  .about_container{
+    height: 100vh;
+  }
+  .acara_container{
+    height: 100vh;
+  }
+  .grid_vertical > .acara__resepsi, .grid_vertical > .col_countdown{
+    margin-top: 10%;
+  }
+
+  .background1_kanan_atas, .background1_kanan_bawah, .background1_kiri_atas, .background1_kiri_bawah,
+  .background2_kanan_atas, .background2_kanan_bawah, .background2_kiri_atas, .background2_kiri_bawah{
+    width: 70%;
+  }
+  .row > .grid_vertical > .amplop__detail{
+    margin-top: 1rem;
+  }
+  .card_countdown{
+    margin: auto;
+    width: 65px;
+    padding: .9rem;
+    border-radius: .5rem;
+  }
+  .hari,.jam,.menit,.detik{
+    font-size: 2.1rem;
+  }
+  .cd_subtitle{
+    font-size: 1rem;
+  }
+  /* .col_countdown{
+    column-gap: .7rem;
+  } */
+  input{
+    width: 19rem;
+  }
+  .input-label{
+    transform: translate(-290px, 10px);;
+  }
+  .input:focus~.input-label,
+  .input:valid~.input-label {
+    transform: translate(-300px, -30px) scale(.8);
+  }
+  .pesan__content{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .img_ucapan{
+    font-size: 50px;
+    width: 50px;
+    margin: .25rem;
+  }
+  .pesan__name{
+    font-size: var(--normal-font-size);
+  }
+  .pesan__detail{
+    font-size: var(--smaller-font-size);
+  }
+}
+
+@media screen and (min-width : 425px) {
+
+  .bunga_1_kiri {
+    top: -30px;
+    left: 0px;
+    width: 100%;
+    height: 117vh;
+  }
+  .bunga_1_kanan {
+    width: 70%;
+    position: absolute;
+    z-index: 1;
+    right: -45px;
+    top: -52px;
+  }
+  .nama-pengantin-pria{
+    margin-bottom: 3rem;
+    font-size: var(--extra-font-size);
+  }
+  .nama-pengantin-wanita{
+    margin-top: 3rem;
+    font-size: var(--extra-font-size);
+  }
+  .foto_cwe,.foto_cwo{
+    width: 35%;
+  }
+  .about_container{
+    height: auto;
+  } 
+  .card__title{
+    font-size: 1.1rem;
+    /* margin: 2rem; */
+    top: 33%;
+  }
+  .card__subtitle{
+    font-size: .7rem;
+  }
+  .nav__menu{
+    height: 4rem;
+  }
+  .nav__name {
+    font-family: var(--confortaa);
+    font-size: .55rem;
+  }
+  .nav__icon {
+    font-size: 1.5rem;
+    padding: 0 .7rem;
+  }
+  .about__nama,.foto_pasangan{
+    margin-top: .5rem;
+  }
+  .about__tanggal{
+    font-size: var(--h3-font-size);
+  }
+  .maps{
+    height: auto;
+  }
+  .card iframe{
+    width: 350px;
+    height: 450px;
+  }
+  .show-scroll{
+    bottom: 5.5rem;
+  }
+  .button_audio{
+    left: .5rem;
+    top: .5rem;
+    bottom: auto;
+  }
+  #player-container #play-pause {
+    width: 40px;
+    height: 40px;
+    background-size: 20px;
+    background-size:15px;
+  }
+  .grid_vertical > .acara__resepsi, .grid_vertical  > .col_countdown{
+    margin-top: 10%;
+  }
+
+  .card__thumbnail > img{
+    width: auto;
+    /* transform: scale(1.1); */
+  }
+  .card_countdown{
+    margin: auto;
+    width: 70px;
+    padding: .7rem;
+    border-radius: .5rem;
+  }
+  .hari,.jam,.menit,.detik{
+    font-size: 2.7rem;
+  }
+  .cd_subtitle{
+    font-size: 1rem;
+  }
+  /* .col_countdown{
+    column-gap: .8rem;
+  } */
+  .amplop__container{
+    margin-top: 1rem;
+  }
+  .title-amplop,.title-ucapan{
+    padding: 1rem;
+  }
+  .button_rek{
+    padding: .6rem;
+    border-radius: .3rem;
+  }
+  .nama__bank{
+    font-size: var(--small-font-size);
+  }
+  .input{
+    width: 22rem;
+  }
+  .input-label{
+    transform: translate(-340px, 10px);;
+  }
+  .input:focus~.input-label,
+  .input:valid~.input-label {
+    transform: translate(-350px, -30px) scale(.8);
+  }
+  .pesan__content{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .img_ucapan{
+    font-size: 60px;
+    width: 60px;
+    margin: .5rem;
+  }
+  .pesan__name{
+    font-size: var(--h3-font-size);
+  }
+  .pesan__detail{
+    font-size: var(--small-font-size);
+  }
+}
+
+@media screen and (min-width: 425px) and (min-height: 768px) {
+  .bunga_1_kiri {
+    top: -30px;
+    left: 0px;
+    width: 100%;
+    height: 117vh;
+  }
+  .bunga_1_kanan {
+    width: 75%;
+    position: absolute;
+    z-index: 1;
+    right: -45px;
+    top: -52px;
+  }
+  .nama-pengantin-pria{
+    margin-bottom: 7rem;
+    font-size: var(--enam);
+  }
+  .nama-pengantin-wanita{
+    margin-top: 7rem;
+    font-size: var(--enam);
+  }
+  .dan-nama-pengantin{
+    font-size: var(--tiga);
+  }
+  .nama-pengantin{
+    font-size: var(--tujuh);
+  }
+  .subtitle{
+    font-size: var(--h2-font-size);
+  }
+  .about__title,.acara__title{
+    font-size: var(--h2-font-size);
+  }
+  .about__tanggal{
+    font-size: var(--h3-font-size);
+  }
+  .nama__pasangan{
+    font-size: var(--h2-font-size);
+  }
+  .about__nama{
+    font-size: var(--h3-font-size);
+  }
+  .about__nama,.foto_pasangan{
+    margin-top: .7rem;
+  }
+  .maps{
+    height: auto;
+  }
+  .ucapan{
+    height: 100vh;
+  }
+  .grid_vertical > .acara__resepsi, .grid_vertical  > .col_countdown{
+    margin-top: 10%;
+  }
+  .input{
+    width: 22rem;
+  }
+  .input-label{
+    transform: translate(-340px, 10px);;
+  }
+  .input:focus~.input-label,
+  .input:valid~.input-label {
+    transform: translate(-350px, -30px) scale(.8);
+  }
+  .pesan__content{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .img_ucapan{
+    font-size: 60px;
+    width: 60px;
+    margin: .5rem;
+  }
+  .pesan__name{
+    font-size: var(--h3-font-size);
+  }
+  .pesan__detail{
+    font-size: var(--small-font-size);
+  }
+}
+/* For medium devices */
+@media screen and (min-width: 576px){
+  .container{
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+  .footer__copy{
+    display: none;
+  }
+  .acara__data > .row > .grid_vertical{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .maps{
+    height: 100vh;
+  }
+  .about_container{
+    height: 100vh;
+  }
+  .button_audio{
+    left: 2rem;
+    bottom: 1.5rem;
+    top: auto;
+  }
+  #player-container #play-pause {
+    width: 50px;
+    height: 50px;
+    background-size: 30px;
+    background-size:20px;
+  }
+  .grid_vertical > .acara__resepsi, .grid_vertical  > .col_countdown{
+    margin-top: 10%;
+  }
+  .input{
+    width: 26rem;
+  }
+  .input-label{
+    transform: translate(-400px, 10px);;
+  }
+  .input:focus~.input-label,
+  .input:valid~.input-label {
+    transform: translate(-410px, -30px) scale(.8);
+  }
+  .pesan__content{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .img_ucapan{
+    font-size: 60px;
+    width: 60px;
+    margin: .5rem;
+  }
+  .pesan__name{
+    font-size: var(--h3-font-size);
+  }
+  .pesan__detail{
+    font-size: var(--small-font-size);
+  }
+}
+
+
+@media screen and (min-width: 767px){
+  body{
+    margin: 0;
+  }
+  /* .nav{
+    height: calc(var(--header-height) + 1.5rem);
+    column-gap: 3rem;
+  } */
+  .nav__img {
+    display: none;
+  }
+  .nav__logo {
+    display: none;
+  }
+  .nav__icon {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+  .nav__list{
+    flex-direction: row;
+    column-gap: 1rem;
+  }
+  .nav__menu{ 
+    height: 4rem;
+    border-radius: 1.25rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .nav__name {
+    font-size: .7rem;
+    font-family: var(--confortaa);
+  }
+  .nav__link:hover {
+    color: var(--first-color);
+  }
+  .home__container{
+    /* margin-top: 50%; */
+    align-items: center;
+  }
+  .home{
+    padding: 7.5rem 0 7.5rem;
+  }
+  .bunga_1_kiri {
+    position: absolute;
+    z-index: 1;
+    top: -112px;
+    left: -93px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    height: 117vh;
+    }
+
+  .bunga_1_kanan {
+    position: absolute;
+    z-index: 1;
+    top: -115px;
+    right: -100px;
+    width: 45%;
+  }
+  .show-scroll{
+    bottom: 2rem;
+  }
+  .basmalah {
+    width: 25%;
+    margin-bottom: var(--mb-1);
+  }
+  .foto_mempelai{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-top: 1.75rem;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .about__nama{
+    margin-top: .5rem;
+  }
+  .background1_kiri_atas,.background1_kanan_atas,.background1_kanan_bawah,.background1_kiri_bawah{
+    width: 32%;
+  }
+  .background2_kiri_atas,.background2_kanan_atas,.background2_kanan_bawah,.background2_kiri_bawah{
+    width: 32%;
+  }
+  .nama-pengantin{
+    font-size: var(--tujuh);
+  }
+  .subtitle{
+    font-size: var(--h2-font-size);
+  }
+  .about__tanggal{
+    font-size: var(--h3-font-size);
+  }
+  .about__title,.about__nama,.acara__title{
+    font-size: var(--h3-font-size);
+  }
+  .about__title{
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  .nama__pasangan{
+    font-size: var(--h2-font-size);
+  }
+  .foto_cwe, .foto_cwo{
+    width: 35%;
+  }
+  .section__title, .section__title-center{
+    font-size: var(--h2-font-size);
+  }
+  .card__title{
+    /* margin: 1rem; */
+    font-size: 1.5rem;
+    top: 33%;
+  }
+  .card__subtitle{
+    font-size: .75rem; 
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 12.5rem);
+    gap: .5rem;
+  }
+  
+  /* Gallery Layout */
+  .gallery__item--1 {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+  }
+  
+  .gallery__item--2 {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+  }
+  
+  .gallery__item--3 {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 2;
+  }
+  
+  .gallery__item--4 {
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 3;
+  }
+  
+  .gallery__item--5 {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 2;
+  }
+  
+  .gallery__item--6 {
+    grid-column: 3 / span 1;
+    grid-row: 4 / span 1;
+  }
+  .acara__title{
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
+  .amplop__detail .acara__title{
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+  .ucapan_1 .acara__title{
+    font-family: var(--confortaa);
+    font-size: var(--normal-font-size);
+  }
+  .ucapan_1{
+    grid-template-columns:max-content auto max-content;
+    margin-left:15%;
+    margin-right: 15%;
+  }
+  .footer__copy{
+    display: none;
+  }
+  .card iframe{
+    width: 400px;
+    height: 400px;
+  }
+
+  .ucapan{
+    height: 100vh;
+  }
+  .nama-pengantin-wanita{
+    font-size: var(--tujuh);
+    margin-top: 5rem;
+  }
+  .nama-pengantin-pria{
+    font-size: var(--tujuh);
+    margin-bottom: 5rem;
+  }
+  .card__thumbnail > img{
+    width: 70%;
+  }
+  .card_countdown{
+    margin: 1rem;
+    width: 100px;
+    border-radius: .75rem;
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+  /* .col_countdown{
+    column-gap: 1rem;
+  } */
+  .hari,.jam,.menit,.detik{
+    font-size: 4rem;
+  }
+  .cd_subtitle{
+    font-size: 1.5rem;
+  }
+  .grid_vertical > .acara__resepsi, .grid_vertical  > .col_countdown{
+    margin-top: 0;
+  }
+  .pesan__content{
+    padding: .5rem;
+  }
+  .pesan__img{
+    width: 130px;
+  }
+  .input{
+    width: 30rem;
+  }
+  .input-label{
+    transform: translate(-470px, 10px);
+  }
+  .input:focus~.input-label,
+  .input:valid~.input-label {
+    transform: translate(-480px, -30px) scale(.8);
+  }
+  .pesan__content{
+    margin-left: 17%;
+    margin-right: 17%;
+  }
+  .img_ucapan{
+    font-size: 70px;
+    width: 70px;
+    margin: 1rem;
+  }
+  .pesan__name{
+    font-size: var(--h2-font-size);
+  }
+  .pesan__detail{
+    font-size: var(--small-font-size);
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 992px){
+  .container{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* .section{
+    padding: 8rem 0 2rem;
+  } */
+
+  .section__title,
+  .section__title-center{
+    font-size: var(--h1-font-size);
+  }
+  .home__img{
+    width: 350px;
+  }
+  
+  .about__img{
+    width: 380px;
+  }
+
+}
+
+@media screen and (min-width: 1200px){
+
+  .about__container{
+    column-gap: 7rem;
+  }
+
+  .scrollup{
+    right: 3rem;
+  }
+}
